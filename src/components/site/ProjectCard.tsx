@@ -50,10 +50,20 @@ export function ProjectCard({
       </div>
       <div className="mt-5 flex items-start justify-between gap-4">
         <div>
-          <h3 className={cn("font-display text-3xl", tone === "dark" ? "text-on-dark" : "text-charcoal")}>
+          <h3
+            className={cn(
+              "font-display text-3xl",
+              tone === "dark" ? "text-on-dark" : "text-charcoal",
+            )}
+          >
             {project.name}
           </h3>
-          <p className={cn("mt-1 text-[0.95rem]", tone === "dark" ? "text-on-dark-muted" : "text-slate")}>
+          <p
+            className={cn(
+              "mt-1 text-[0.95rem]",
+              tone === "dark" ? "text-on-dark-muted" : "text-slate",
+            )}
+          >
             {project.short}
           </p>
         </div>

@@ -14,10 +14,14 @@ export const Route = createFileRoute("/portfolio/")({
       { title: "Portfolio — Branding, Design & Video Work | BAPARDEKAR CREATIVE" },
       {
         name: "description",
-        content: "Explore branding, logo design, social media, poster and video editing projects by BAPARDEKAR CREATIVE.",
+        content:
+          "Explore branding, logo design, social media, poster and video editing projects by BAPARDEKAR CREATIVE.",
       },
       { property: "og:title", content: "Portfolio — BAPARDEKAR CREATIVE" },
-      { property: "og:description", content: "Identity, social content, posters and cinematic video projects." },
+      {
+        property: "og:description",
+        content: "Identity, social content, posters and cinematic video projects.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -50,7 +54,10 @@ function PortfolioPage() {
             className="sticky top-[4.25rem] z-30 -mx-[clamp(1.25rem,4vw,3.5rem)] flex gap-2 overflow-x-auto bg-offwhite/95 px-[clamp(1.25rem,4vw,3.5rem)] py-4 backdrop-blur"
           >
             {portfolioFilters.map((f) => {
-              const count = f === "All Projects" ? projects.length : projects.filter((p) => p.category === f).length;
+              const count =
+                f === "All Projects"
+                  ? projects.length
+                  : projects.filter((p) => p.category === f).length;
               return (
                 <Button
                   variant="ghost"
@@ -76,7 +83,10 @@ function PortfolioPage() {
               New projects in this category are coming soon.
             </p>
           ) : (
-            <div className="mt-12 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+            <div
+              className="mt-12 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
+              aria-live="polite"
+            >
               {list.map((p, i) => {
                 return (
                   <Reveal key={p.slug} delay={(i % 2) * 0.08}>

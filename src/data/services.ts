@@ -43,8 +43,7 @@ export const departments: Record<
   motion: {
     name: "BAPARDEKAR MOTION",
     label: "Video Editing, Cinematic Content & Motion Graphics",
-    summary:
-      "Edits with rhythm and intention — from short-form reels to cinematic brand films.",
+    summary: "Edits with rhythm and intention — from short-form reels to cinematic brand films.",
     intro:
       "Attention is earned in seconds. We edit, grade and animate video that holds viewers, tells a clear story and fits the platform it lives on.",
     image: assets.services.motion,
@@ -67,7 +66,12 @@ export const services: Service[] = [
       "Refinement rounds on the chosen direction",
       "Colour and monochrome versions",
     ],
-    deliverables: ["Primary logo", "Secondary / stacked version", "Icon or monogram", "SVG, PNG, PDF and JPG files"],
+    deliverables: [
+      "Primary logo",
+      "Secondary / stacked version",
+      "Icon or monogram",
+      "SVG, PNG, PDF and JPG files",
+    ],
     suitableFor: ["New businesses", "Rebrands", "Personal brands", "Product launches"],
     turnaround: "Confirmed after scope review",
     startingPrice: null,
@@ -88,8 +92,18 @@ export const services: Service[] = [
       "Graphic elements and patterns",
       "Brand guidelines document",
     ],
-    deliverables: ["Logo suite", "Brand guidelines PDF", "Stationery designs", "Social media templates"],
-    suitableFor: ["Startups", "Growing businesses", "Restaurants and cafés", "Professional services"],
+    deliverables: [
+      "Logo suite",
+      "Brand guidelines PDF",
+      "Stationery designs",
+      "Social media templates",
+    ],
+    suitableFor: [
+      "Startups",
+      "Growing businesses",
+      "Restaurants and cafés",
+      "Professional services",
+    ],
     turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Branding",
@@ -102,7 +116,12 @@ export const services: Service[] = [
     short: "Consistent, scroll-stopping posts.",
     intro:
       "Designs that keep your feed recognisable and on-brand, created for the formats and sizes each platform prefers.",
-    included: ["Platform-specific sizing", "On-brand templates", "Copy layout and hierarchy", "Revision round"],
+    included: [
+      "Platform-specific sizing",
+      "On-brand templates",
+      "Copy layout and hierarchy",
+      "Revision round",
+    ],
     deliverables: ["Static posts", "Story designs", "Editable templates on request"],
     suitableFor: ["Small businesses", "Creators", "Marketing teams", "Events"],
     turnaround: "Confirmed after scope review",
@@ -117,7 +136,12 @@ export const services: Service[] = [
     short: "Stories told slide by slide.",
     intro:
       "Carousels that educate, sell and get saved — with a clear narrative flow and a strong first slide.",
-    included: ["Content structuring", "Slide-by-slide layout", "Cover slide design", "Brand-consistent styling"],
+    included: [
+      "Content structuring",
+      "Slide-by-slide layout",
+      "Cover slide design",
+      "Brand-consistent styling",
+    ],
     deliverables: ["Carousel slides (PNG/JPG)", "Optional editable source file"],
     suitableFor: ["Educators and coaches", "D2C brands", "Agencies", "Personal brands"],
     turnaround: "Confirmed after scope review",
@@ -145,7 +169,8 @@ export const services: Service[] = [
     department: "design",
     name: "Marketing Banners",
     short: "Web and display banners that convert.",
-    intro: "Banners for websites, marketplaces and advertising, designed for clarity and click-through.",
+    intro:
+      "Banners for websites, marketplaces and advertising, designed for clarity and click-through.",
     included: ["Multiple sizes", "Message hierarchy", "Call-to-action design"],
     deliverables: ["Web banners", "Marketplace banners", "Display ad sizes"],
     suitableFor: ["E-commerce", "Campaigns", "Websites", "Marketplaces"],
@@ -159,7 +184,8 @@ export const services: Service[] = [
     department: "design",
     name: "Brochures",
     short: "Printed and digital brochures with depth.",
-    intro: "Multi-page brochures that present your products or services with a clear editorial structure.",
+    intro:
+      "Multi-page brochures that present your products or services with a clear editorial structure.",
     included: ["Page structure", "Layout and typography", "Image treatment", "Print-ready setup"],
     deliverables: ["Print-ready PDF", "Digital PDF"],
     suitableFor: ["Real estate", "Education", "Manufacturing", "Hospitality"],
@@ -173,7 +199,8 @@ export const services: Service[] = [
     department: "design",
     name: "Product Advertising Creatives",
     short: "Ad visuals that put the product first.",
-    intro: "Static ad creatives for Meta, Google and marketplaces, built to highlight your product clearly.",
+    intro:
+      "Static ad creatives for Meta, Google and marketplaces, built to highlight your product clearly.",
     included: ["Ad concept", "Product-focused composition", "Multiple ad sizes", "Copy layout"],
     deliverables: ["Ad creatives in required sizes", "Variations for testing"],
     suitableFor: ["D2C brands", "E-commerce stores", "Performance marketers"],
@@ -187,8 +214,14 @@ export const services: Service[] = [
     department: "design",
     name: "Business Presentation Design",
     short: "Decks that make your case clearly.",
-    intro: "Pitch decks, company profiles and sales presentations designed for clarity and confidence.",
-    included: ["Slide structure review", "Master template", "Data visualisation", "Icon and image styling"],
+    intro:
+      "Pitch decks, company profiles and sales presentations designed for clarity and confidence.",
+    included: [
+      "Slide structure review",
+      "Master template",
+      "Data visualisation",
+      "Icon and image styling",
+    ],
     deliverables: ["PowerPoint / Keynote / Google Slides file", "PDF export"],
     suitableFor: ["Startups raising funds", "Sales teams", "Consultants"],
     turnaround: "Confirmed after scope review",
@@ -203,8 +236,14 @@ export const services: Service[] = [
     department: "motion",
     name: "Instagram Reels",
     short: "Short-form edits built for the feed.",
-    intro: "Fast, rhythmic reels with captions, music sync and hooks designed to keep viewers watching.",
-    included: ["Hook-first edit", "Captions and text animation", "Music and sound design", "Colour correction"],
+    intro:
+      "Fast, rhythmic reels with captions, music sync and hooks designed to keep viewers watching.",
+    included: [
+      "Hook-first edit",
+      "Captions and text animation",
+      "Music and sound design",
+      "Colour correction",
+    ],
     deliverables: ["Vertical 9:16 MP4", "Cover frame"],
     suitableFor: ["Creators", "Brands", "Restaurants", "Coaches"],
     formats: ["MP4 (H.264)", "1080×1920", "Up to 90 seconds"],
@@ -233,8 +272,14 @@ export const services: Service[] = [
     department: "motion",
     name: "YouTube Video Editing",
     short: "Long-form edits with story and structure.",
-    intro: "Complete editing for long-form YouTube content — structure, b-roll, graphics, sound and colour.",
-    included: ["Story structure", "B-roll and graphics", "Audio clean-up and music", "Colour correction"],
+    intro:
+      "Complete editing for long-form YouTube content — structure, b-roll, graphics, sound and colour.",
+    included: [
+      "Story structure",
+      "B-roll and graphics",
+      "Audio clean-up and music",
+      "Colour correction",
+    ],
     deliverables: ["16:9 MP4 master", "Optional thumbnail design"],
     suitableFor: ["YouTubers", "Educators", "Brands with channels"],
     formats: ["MP4 (H.264/H.265)", "1080p or 4K"],
@@ -249,7 +294,12 @@ export const services: Service[] = [
     name: "Promotional Videos",
     short: "Campaign videos with a clear message.",
     intro: "Promotional edits for launches, offers and events, cut to communicate one clear idea.",
-    included: ["Script / storyboard review", "Editing and pacing", "Text and motion graphics", "Music licensing guidance"],
+    included: [
+      "Script / storyboard review",
+      "Editing and pacing",
+      "Text and motion graphics",
+      "Music licensing guidance",
+    ],
     deliverables: ["Master video", "Social cut-downs in multiple ratios"],
     suitableFor: ["Businesses", "Events", "Product launches"],
     formats: ["MP4", "16:9, 1:1, 9:16"],
@@ -278,7 +328,8 @@ export const services: Service[] = [
     department: "motion",
     name: "Cinematic Video Editing",
     short: "Film-grade storytelling and colour.",
-    intro: "Cinematic edits for brand films, travel films and short films, with careful grading and sound.",
+    intro:
+      "Cinematic edits for brand films, travel films and short films, with careful grading and sound.",
     included: ["Narrative editing", "Colour grading", "Sound design", "Titles"],
     deliverables: ["Master film", "Trailer or teaser cut"],
     suitableFor: ["Filmmakers", "Travel creators", "Brand films", "Weddings and events"],
@@ -321,11 +372,28 @@ export function formatPrice(price: Price | null) {
 
 /** Shared quote-stage information; service-specific policies can override it. */
 export const serviceQuoteDetails = {
-  revisionPolicy: "Revision rounds and change requests are defined in your project quotation. No fixed revision allowance is confirmed here.",
+  revisionPolicy:
+    "Revision rounds and change requests are defined in your project quotation. No fixed revision allowance is confirmed here.",
   faqs: [
-    { question: "How is pricing decided?", answer: "Pricing depends on scope, complexity and deliverables. Request a quote for your brief; no fixed price is advertised." },
-    { question: "What should I prepare?", answer: "Share your goals, audience, existing brand assets, reference links and any preferred deadline." },
-    { question: "When will the work be delivered?", answer: "Timing is confirmed after scope review. A preferred deadline is a request, not a delivery commitment." },
-    { question: "Are editable source files included?", answer: "Specify the formats you need in your brief. Source files, licensing and final deliverables need to be confirmed in the quotation." },
+    {
+      question: "How is pricing decided?",
+      answer:
+        "Pricing depends on scope, complexity and deliverables. Request a quote for your brief; no fixed price is advertised.",
+    },
+    {
+      question: "What should I prepare?",
+      answer:
+        "Share your goals, audience, existing brand assets, reference links and any preferred deadline.",
+    },
+    {
+      question: "When will the work be delivered?",
+      answer:
+        "Timing is confirmed after scope review. A preferred deadline is a request, not a delivery commitment.",
+    },
+    {
+      question: "Are editable source files included?",
+      answer:
+        "Specify the formats you need in your brief. Source files, licensing and final deliverables need to be confirmed in the quotation.",
+    },
   ],
 };

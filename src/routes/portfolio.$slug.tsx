@@ -14,10 +14,18 @@ export const Route = createFileRoute("/portfolio/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData?.project;
-    if (!p) return { meta: [{ title: "Project not found — BAPARDEKAR CREATIVE" }, { name: "robots", content: "noindex" }] };
+    if (!p)
+      return {
+        meta: [
+          { title: "Project not found — BAPARDEKAR CREATIVE" },
+          { name: "robots", content: "noindex" },
+        ],
+      };
     return {
       meta: [
-        { title: `${p.name} — ${p.projectType}${p.isConcept ? " (Concept)" : ""} | BAPARDEKAR CREATIVE` },
+        {
+          title: `${p.name} — ${p.projectType}${p.isConcept ? " (Concept)" : ""} | BAPARDEKAR CREATIVE`,
+        },
         { name: "description", content: `${p.short} ${p.overview}`.slice(0, 158) },
         { property: "og:title", content: `${p.name} — ${p.projectType}` },
         { property: "og:description", content: p.short },
@@ -30,7 +38,9 @@ export const Route = createFileRoute("/portfolio/$slug")({
   notFoundComponent: () => (
     <div className="bg-charcoal px-6 pb-32 pt-48 text-center text-on-dark">
       <h1 className="display-md">Project not found</h1>
-      <Link to="/portfolio" className="mt-6 inline-block text-orange link-underline">Back to portfolio</Link>
+      <Link to="/portfolio" className="mt-6 inline-block text-orange link-underline">
+        Back to portfolio
+      </Link>
     </div>
   ),
 });
@@ -44,12 +54,20 @@ function CaseStudy() {
     <>
       {/* Cover */}
       <section className="relative isolate min-h-[88svh] overflow-hidden bg-charcoal text-on-dark">
-        <img src={p.cover} alt={`${p.name} cover`} className="absolute inset-0 -z-10 h-full w-full object-cover" width={1920} height={1080} />
+        <img
+          src={p.cover}
+          alt={`${p.name} cover`}
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          width={1920}
+          height={1080}
+        />
         <div className="veil-bottom absolute inset-0 -z-10" />
         <div className="container-wide flex min-h-[88svh] flex-col justify-end pb-16 pt-40">
           <Reveal>
             <div className="flex flex-wrap gap-2">
-              <span className="bg-orange px-3 py-1 font-heading text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-charcoal">{p.category}</span>
+              <span className="bg-orange px-3 py-1 font-heading text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-charcoal">
+                {p.category}
+              </span>
               {p.isConcept && (
                 <span className="border border-on-dark/40 px-3 py-1 font-heading text-[0.65rem] font-semibold uppercase tracking-[0.18em]">
                   Concept project
@@ -80,7 +98,9 @@ function CaseStudy() {
           </dl>
           <Reveal className="md:col-span-7 md:col-start-6">
             <p className="eyebrow text-orange-deep">Overview</p>
-            <p className="mt-6 font-display text-3xl leading-snug text-charcoal md:text-4xl">{p.overview}</p>
+            <p className="mt-6 font-display text-3xl leading-snug text-charcoal md:text-4xl">
+              {p.overview}
+            </p>
           </Reveal>
         </div>
       </section>
@@ -111,7 +131,9 @@ function CaseStudy() {
           <ol className="mt-12 grid gap-8 md:grid-cols-4">
             {p.process.map((step, i) => (
               <li key={step.title} className="border-t-2 border-charcoal pt-6">
-                <span className="font-heading text-xs tracking-[0.25em] text-orange-deep">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-heading text-xs tracking-[0.25em] text-orange-deep">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <h3 className="mt-3 font-display text-3xl text-charcoal">{step.title}</h3>
                 <p className="mt-2 text-slate">{step.text}</p>
               </li>
@@ -124,7 +146,14 @@ function CaseStudy() {
       <section className="bg-offwhite py-20">
         <div className="container-wide space-y-8">
           {p.video && (
-            <video className="aspect-video w-full bg-charcoal object-cover" src={p.video} poster={p.cover} controls preload="none" playsInline />
+            <video
+              className="aspect-video w-full bg-charcoal object-cover"
+              src={p.video}
+              poster={p.cover}
+              controls
+              preload="none"
+              playsInline
+            />
           )}
           {p.isVideo && !p.video && (
             <p className="border border-dashed border-charcoal/25 p-6 text-center text-slate">
@@ -140,7 +169,11 @@ function CaseStudy() {
                   loading="lazy"
                   width={1600}
                   height={1000}
-                  className={i === 0 ? "aspect-[16/9] w-full object-cover" : "aspect-[4/3] w-full object-cover"}
+                  className={
+                    i === 0
+                      ? "aspect-[16/9] w-full object-cover"
+                      : "aspect-[4/3] w-full object-cover"
+                  }
                 />
               </Reveal>
             ))}
@@ -159,7 +192,9 @@ function CaseStudy() {
             <p className="eyebrow text-orange-deep">Tools used</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {p.tools.map((t) => (
-                <span key={t} className="border border-charcoal/20 px-4 py-2 text-charcoal">{t}</span>
+                <span key={t} className="border border-charcoal/20 px-4 py-2 text-charcoal">
+                  {t}
+                </span>
               ))}
             </div>
           </div>
@@ -175,11 +210,15 @@ function CaseStudy() {
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild variant="hero" size="xl">
-              <Link to="/start-project" search={{ service: service?.slug }}>Start a similar project</Link>
+              <Link to="/start-project" search={{ service: service?.slug }}>
+                Start a similar project
+              </Link>
             </Button>
             {service && (
               <Button asChild variant="heroOutline" size="xl">
-                <Link to="/services/$slug" params={{ slug: service.slug }}>About {service.name}</Link>
+                <Link to="/services/$slug" params={{ slug: service.slug }}>
+                  About {service.name}
+                </Link>
               </Button>
             )}
           </div>
@@ -191,7 +230,10 @@ function CaseStudy() {
         <div className="container-wide">
           <div className="flex items-end justify-between">
             <h2 className="display-md text-charcoal">Related projects</h2>
-            <Link to="/portfolio" className="inline-flex items-center gap-2 font-heading text-xs font-semibold uppercase tracking-[0.2em] text-charcoal link-underline">
+            <Link
+              to="/portfolio"
+              className="inline-flex items-center gap-2 font-heading text-xs font-semibold uppercase tracking-[0.2em] text-charcoal link-underline"
+            >
               <ArrowLeft className="h-4 w-4" /> All work
             </Link>
           </div>
