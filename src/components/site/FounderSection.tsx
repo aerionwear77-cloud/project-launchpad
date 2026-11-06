@@ -20,11 +20,11 @@ export function FounderPortrait() {
       role="img"
       aria-label="Founder portrait placeholder"
     >
-      <span className="eyebrow text-on-dark-muted">Portrait coming soon</span>
+      <span className="eyebrow text-on-dark-muted">Founder & Creative Director</span>
       <span className="font-display text-[12rem] leading-none text-on-dark/90">
         B<span className="text-orange">.</span>
       </span>
-      <span className="text-sm text-on-dark-muted">Add your photo in /public/assets/images/founder/</span>
+      <span className="text-sm text-on-dark-muted">BAPARDEKAR CREATIVE</span>
     </div>
   );
 }
@@ -38,7 +38,10 @@ export function FounderSection({ showLink = true }: { showLink?: boolean }) {
             <div className="aspect-[4/5] overflow-hidden shadow-lift">
               <FounderPortrait />
             </div>
-            <div className="absolute -bottom-6 -right-6 hidden h-32 w-32 border border-orange md:block" aria-hidden />
+            <div
+              className="absolute -bottom-6 -right-6 hidden h-32 w-32 border border-orange md:block"
+              aria-hidden
+            />
           </div>
         </Reveal>
         <div className="md:col-span-6 md:col-start-7">
@@ -57,10 +60,19 @@ export function FounderSection({ showLink = true }: { showLink?: boolean }) {
               <p className="eyebrow mt-2 text-slate">{site.founder.role}</p>
             </div>
             {showLink && (
-              <Link to="/about" className="mt-8 inline-block font-heading text-xs font-semibold uppercase tracking-[0.2em] text-charcoal link-underline">
+              <Link
+                to="/about"
+                className="mt-8 inline-block font-heading text-xs font-semibold uppercase tracking-[0.2em] text-charcoal link-underline"
+              >
                 Read our story
               </Link>
             )}
+            <Link
+              to="/start-project"
+              className="mt-6 block font-heading text-xs font-semibold uppercase text-orange-deep link-underline"
+            >
+              Discuss your project
+            </Link>
           </Reveal>
         </div>
       </div>

@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application conventions
+- Keep inquiry validation and draft export in a browser-safe shared module; future delivery handlers must revalidate with the same schema because browser validation is not a security boundary.
+- Inquiry and consultation forms currently prepare unsent drafts only; never imply delivery or confirmation before a real integration is connected and tested.
+- Keep verified contact details and commercial settings centralized so empty configuration never renders placeholder contact links or invented commitments.

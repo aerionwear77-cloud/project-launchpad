@@ -38,11 +38,11 @@ export function ProjectCard({
           </span>
           {project.isConcept && (
             <span className="bg-charcoal/80 px-2.5 py-1 font-heading text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-on-dark">
-              Concept
+              Concept Project
             </span>
           )}
         </div>
-        {project.isVideo && (
+        {project.isVideo && project.video && (
           <span className="absolute bottom-4 right-4 grid h-12 w-12 place-items-center rounded-full bg-orange text-charcoal transition-transform duration-500 group-hover:scale-110">
             <Play className="h-4 w-4 fill-current" />
           </span>
@@ -50,10 +50,20 @@ export function ProjectCard({
       </div>
       <div className="mt-5 flex items-start justify-between gap-4">
         <div>
-          <h3 className={cn("font-display text-3xl", tone === "dark" ? "text-on-dark" : "text-charcoal")}>
+          <h3
+            className={cn(
+              "font-display text-3xl",
+              tone === "dark" ? "text-on-dark" : "text-charcoal",
+            )}
+          >
             {project.name}
           </h3>
-          <p className={cn("mt-1 text-[0.95rem]", tone === "dark" ? "text-on-dark-muted" : "text-slate")}>
+          <p
+            className={cn(
+              "mt-1 text-[0.95rem]",
+              tone === "dark" ? "text-on-dark-muted" : "text-slate",
+            )}
+          >
             {project.short}
           </p>
         </div>

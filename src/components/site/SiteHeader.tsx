@@ -64,7 +64,9 @@ export function SiteHeader() {
           </Button>
         </div>
 
-        <button
+        <Button
+          variant="ghost"
+          size="icon"
           type="button"
           className="text-on-dark lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -72,7 +74,7 @@ export function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
-        </button>
+        </Button>
       </div>
 
       {open && (
