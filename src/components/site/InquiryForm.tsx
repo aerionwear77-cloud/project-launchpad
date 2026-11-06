@@ -14,7 +14,7 @@ export function InquiryForm({
   initialService,
   consultation = false,
 }: {
-  initialService?: string;
+  initialService?: string | undefined;
   consultation?: boolean;
 }) {
   const selected = services.find(
