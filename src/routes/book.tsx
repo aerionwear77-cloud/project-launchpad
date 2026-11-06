@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { ComingSoonForm } from "@/components/site/ComingSoonForm";
+import { InquiryForm } from "@/components/site/InquiryForm";
 
 export const Route = createFileRoute("/book")({
   head: () => ({
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/book")({
   component: () => (
     <>
       <PageHero eyebrow="Book a consultation" title="Let's talk about your idea." intro="Calls are scheduled in India Standard Time (Asia/Kolkata)." compact />
-      <ComingSoonForm what="Consultation booking" />
+      <InquiryForm consultation />
     </>
   ),
 });

@@ -20,11 +20,11 @@ export function FounderPortrait() {
       role="img"
       aria-label="Founder portrait placeholder"
     >
-      <span className="eyebrow text-on-dark-muted">Portrait coming soon</span>
+      <span className="eyebrow text-on-dark-muted">Founder & Creative Director</span>
       <span className="font-display text-[12rem] leading-none text-on-dark/90">
         B<span className="text-orange">.</span>
       </span>
-      <span className="text-sm text-on-dark-muted">Add your photo in /public/assets/images/founder/</span>
+      <span className="text-sm text-on-dark-muted">BAPARDEKAR CREATIVE</span>
     </div>
   );
 }
@@ -61,6 +61,7 @@ export function FounderSection({ showLink = true }: { showLink?: boolean }) {
                 Read our story
               </Link>
             )}
+            <Link to="/start-project" className="mt-6 block font-heading text-xs font-semibold uppercase text-orange-deep link-underline">Discuss your project</Link>
           </Reveal>
         </div>
       </div>

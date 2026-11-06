@@ -18,12 +18,12 @@ export function SiteFooter() {
           <span>Start a project</span>
           <ArrowUpRight className="mb-3 h-[0.6em] w-[0.6em] text-orange transition-transform duration-500 group-hover:-translate-y-2 group-hover:translate-x-2" />
         </Link>
-        <a
+        {site.contact.email && <a
           href={`mailto:${site.contact.email}`}
           className="mt-8 inline-block font-heading text-sm tracking-[0.15em] text-on-dark-muted link-underline hover:text-on-dark"
         >
           {site.contact.email}
-        </a>
+        </a>}
       </div>
 
       <div className="container-wide grid gap-12 py-16 md:grid-cols-12">
@@ -77,7 +77,7 @@ export function SiteFooter() {
             <li><Link to="/book" className="hover:text-on-dark">Book a Consultation</Link></li>
             <li><Link to="/contact" className="hover:text-on-dark">Contact</Link></li>
           </ul>
-          <p className="eyebrow mb-5 mt-8 text-orange">Follow</p>
+          {site.social.length > 0 && <p className="eyebrow mb-5 mt-8 text-orange">Follow</p>}
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem] text-on-dark-muted">
             {site.social.map((s) => (
               <li key={s.label}>

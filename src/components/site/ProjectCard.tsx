@@ -38,11 +38,11 @@ export function ProjectCard({
           </span>
           {project.isConcept && (
             <span className="bg-charcoal/80 px-2.5 py-1 font-heading text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-on-dark">
-              Concept
+              Concept Project
             </span>
           )}
         </div>
-        {project.isVideo && (
+        {project.isVideo && project.video && (
           <span className="absolute bottom-4 right-4 grid h-12 w-12 place-items-center rounded-full bg-orange text-charcoal transition-transform duration-500 group-hover:scale-110">
             <Play className="h-4 w-4 fill-current" />
           </span>

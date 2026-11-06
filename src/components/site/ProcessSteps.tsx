@@ -9,8 +9,8 @@ export const processSteps = [
   },
   {
     n: "02",
-    title: "Strategize",
-    text: "Define the scope, creative direction and timeline.",
+    title: "Plan",
+    text: "Establish scope, creative direction and pricing.",
     detail: "You receive a clear scope, a creative direction and a timeline or quotation before any work begins.",
   },
   {

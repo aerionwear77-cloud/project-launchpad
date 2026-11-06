@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { ComingSoonForm } from "@/components/site/ComingSoonForm";
+import { InquiryForm } from "@/components/site/InquiryForm";
 
 export const Route = createFileRoute("/start-project")({
   validateSearch: (search: Record<string, unknown>): { service?: string | undefined } => ({
@@ -29,7 +29,7 @@ function StartProjectPage() {
         intro={service ? `Service selected: ${service}. A request is not a paid order — we confirm scope and price first.` : "A request is not a paid order — we confirm scope and price with you first."}
         compact
       />
-      <ComingSoonForm what={service ? `Project request — ${service}` : "Project request"} />
+      <InquiryForm initialService={service} />
     </>
   );
 }
