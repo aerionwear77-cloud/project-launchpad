@@ -128,7 +128,7 @@ function CaseStudy() {
           )}
           {p.isVideo && !p.video && (
             <p className="border border-dashed border-charcoal/25 p-6 text-center text-slate">
-              Video preview coming soon — stills from the edit are shown below.
+              Concept visual study — no playable video has been added to this project.
             </p>
           )}
           <div className="grid gap-8 md:grid-cols-2">
@@ -136,7 +136,7 @@ function CaseStudy() {
               <Reveal key={src + i} className={i === 0 ? "md:col-span-2" : ""}>
                 <img
                   src={src}
-                  alt={`${p.name} — image ${i + 1}`}
+                  alt={`${p.name}: ${p.projectType} concept visual, ${i === 0 ? "overview composition" : "supporting artwork"}`}
                   loading="lazy"
                   width={1600}
                   height={1000}
@@ -175,7 +175,7 @@ function CaseStudy() {
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild variant="hero" size="xl">
-              <Link to="/start-project" search={{ service: service?.orderService }}>Start a similar project</Link>
+              <Link to="/start-project" search={{ service: service?.slug }}>Start a similar project</Link>
             </Button>
             {service && (
               <Button asChild variant="heroOutline" size="xl">

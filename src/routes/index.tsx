@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDownRight, ArrowUpRight, Play } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
@@ -56,97 +56,28 @@ function HomePage() {
   return (
     <>
       {/* 01 — HERO */}
-      <section className="grain relative isolate min-h-[100svh] overflow-hidden bg-charcoal text-on-dark">
-        <div className="container-wide grid min-h-[100svh] items-end gap-10 pb-14 pt-32 md:grid-cols-12 md:pb-20">
-          <div className="relative z-10 md:col-span-7 md:pb-8">
-            <motion.p
-              initial={reduce ? false : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="eyebrow flex items-center gap-3 text-orange"
-            >
-              <span className="h-px w-10 bg-orange" /> Digital Creative Agency
-            </motion.p>
-            <h1 className="display-xl mt-8">
-              {["Creativity.", "Delivered with", "purpose."].map((line, i) => (
-                <span key={line} className="block overflow-hidden pb-2">
-                  <motion.span
-                    className={i === 2 ? "block italic text-orange" : "block"}
-                    initial={reduce ? false : { y: "105%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 1.1, delay: 0.15 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    {line}
-                  </motion.span>
-                </span>
-              ))}
-            </h1>
-            <motion.div
-              initial={reduce ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.6 }}
-            >
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-on-dark-muted md:text-xl">
-                We help businesses, brands and creators transform ideas into meaningful visual experiences through
-                thoughtful design and engaging video content.
-              </p>
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <Button asChild variant="hero" size="xl">
-                  <Link to="/start-project">Start a Project</Link>
-                </Button>
-                <Button asChild variant="heroOutline" size="xl">
-                  <Link to="/portfolio">Explore Our Work</Link>
-                </Button>
-              </div>
-              <p className="eyebrow mt-12 text-on-dark/55">{site.coverage}</p>
-            </motion.div>
-          </div>
-
-          <motion.div
-            className="relative md:col-span-5 md:self-stretch"
-            initial={reduce ? false : { opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="relative h-[60vh] overflow-hidden md:absolute md:inset-0 md:-mr-[clamp(1.25rem,4vw,3.5rem)] md:h-auto md:mt-0">
-              {assets.hero.background ? (
-                <video
-                  className="h-full w-full object-cover"
-                  src={assets.hero.background}
-                  poster={assets.hero.poster}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
-              ) : (
-                <img
-                  src={assets.hero.poster}
-                  alt="A designer sketching beside a video editing timeline in a warm studio at dusk"
-                  className="h-full w-full object-cover"
-                  width={1600}
-                  height={1920}
-                  fetchPriority="high"
-                />
-              )}
-              <div className="veil-bottom absolute inset-0" />
-              <Link
-                to="/portfolio/$slug"
-                params={{ slug: "coastline-short-film" }}
-                className="group absolute bottom-6 left-6 right-6 flex items-center gap-4 border border-on-dark/20 bg-charcoal/60 p-4 backdrop-blur-md transition-colors hover:border-orange"
-              >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-orange text-charcoal transition-transform group-hover:scale-110">
-                  <Play className="h-4 w-4 fill-current" />
-                </span>
-                <span className="min-w-0">
-                  <span className="eyebrow block text-on-dark-muted">Showreel preview</span>
-                  <span className="block truncate font-display text-2xl text-on-dark">Coastline — a cinematic edit</span>
-                </span>
-              </Link>
+      <section className="grain relative isolate overflow-hidden bg-charcoal text-on-dark">
+        {assets.hero.background ? (
+          <video className="absolute inset-0 -z-20 h-full w-full object-cover" src={assets.hero.background} poster={assets.hero.poster} autoPlay={!reduce} muted loop playsInline preload="none" />
+        ) : (
+          <img src={assets.hero.poster} alt="Creative studio with design sketches and a video editing workspace" className="absolute inset-0 -z-20 h-full w-full object-cover" width={1600} height={1920} fetchPriority="high" />
+        )}
+        <div className="absolute inset-0 -z-10 bg-charcoal/65" />
+        <div className="veil-side absolute inset-0 -z-10" />
+        <div className="container-wide flex min-h-[86svh] flex-col justify-end pb-14 pt-40 md:pb-20">
+          <motion.div initial={reduce ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="max-w-4xl">
+            <p className="eyebrow text-orange">Design · Branding · Motion</p>
+            <h1 className="display-xl mt-6">BAPARDEKAR<br /><em className="text-orange">CREATIVE</em></h1>
+            <p className="mt-6 font-display text-3xl md:text-4xl">Creative thinking. Exceptional execution.</p>
+            <p className="mt-6 max-w-2xl text-lg text-on-dark-muted">We help brands, businesses and creators transform ideas into meaningful visual experiences through thoughtful design and engaging video.</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild variant="hero" size="xl"><Link to="/start-project">Start a Project <ArrowUpRight /></Link></Button>
+              <Button asChild variant="heroOutline" size="xl"><Link to="/portfolio">Explore Our Work</Link></Button>
             </div>
+            <p className="eyebrow mt-8 text-on-dark-muted">{site.coverage}</p>
           </motion.div>
         </div>
-        <ArrowDownRight className="absolute bottom-8 right-8 hidden h-6 w-6 text-on-dark/40 md:block" aria-hidden />
+        <ArrowDownRight className="absolute bottom-8 right-8 hidden h-6 w-6 text-on-dark-muted md:block" aria-hidden />
       </section>
 
       {/* Marquee */}

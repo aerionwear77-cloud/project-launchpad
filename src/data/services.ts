@@ -3,7 +3,7 @@ import { assets } from "@/config/assets";
 /**
  * Service catalogue. Edit names, descriptions, turnaround and prices here.
  * `startingPrice: null` shows "Request a quote" on the website.
- * Turnaround values are PLACEHOLDER estimates — adjust to your real timelines.
+ * Turnaround and revision terms remain unconfirmed until a project quotation.
  */
 export type Department = "design" | "motion";
 
@@ -21,6 +21,8 @@ export type Service = {
   formats?: string[];
   turnaround: string;
   startingPrice: Price | null;
+  revisionPolicy?: string;
+  faqs?: { question: string; answer: string }[];
   orderService: string;
   portfolioCategories: string[];
 };
@@ -67,7 +69,7 @@ export const services: Service[] = [
     ],
     deliverables: ["Primary logo", "Secondary / stacked version", "Icon or monogram", "SVG, PNG, PDF and JPG files"],
     suitableFor: ["New businesses", "Rebrands", "Personal brands", "Product launches"],
-    turnaround: "7–10 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Logo Design",
     portfolioCategories: ["Logo Design"],
@@ -88,7 +90,7 @@ export const services: Service[] = [
     ],
     deliverables: ["Logo suite", "Brand guidelines PDF", "Stationery designs", "Social media templates"],
     suitableFor: ["Startups", "Growing businesses", "Restaurants and cafés", "Professional services"],
-    turnaround: "3–4 weeks",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Branding",
     portfolioCategories: ["Branding"],
@@ -103,7 +105,7 @@ export const services: Service[] = [
     included: ["Platform-specific sizing", "On-brand templates", "Copy layout and hierarchy", "Revision round"],
     deliverables: ["Static posts", "Story designs", "Editable templates on request"],
     suitableFor: ["Small businesses", "Creators", "Marketing teams", "Events"],
-    turnaround: "2–5 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Social Media Design",
     portfolioCategories: ["Social Media"],
@@ -118,7 +120,7 @@ export const services: Service[] = [
     included: ["Content structuring", "Slide-by-slide layout", "Cover slide design", "Brand-consistent styling"],
     deliverables: ["Carousel slides (PNG/JPG)", "Optional editable source file"],
     suitableFor: ["Educators and coaches", "D2C brands", "Agencies", "Personal brands"],
-    turnaround: "2–4 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Social Media Design",
     portfolioCategories: ["Social Media"],
@@ -133,7 +135,7 @@ export const services: Service[] = [
     included: ["Concept and layout", "Typography and hierarchy", "Print or digital preparation"],
     deliverables: ["High-resolution print file", "Digital versions for social and web"],
     suitableFor: ["Events", "Retail offers", "Launches", "Music and culture"],
-    turnaround: "2–4 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Poster Design",
     portfolioCategories: ["Posters"],
@@ -147,7 +149,7 @@ export const services: Service[] = [
     included: ["Multiple sizes", "Message hierarchy", "Call-to-action design"],
     deliverables: ["Web banners", "Marketplace banners", "Display ad sizes"],
     suitableFor: ["E-commerce", "Campaigns", "Websites", "Marketplaces"],
-    turnaround: "2–4 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Social Media Design",
     portfolioCategories: ["Social Media", "Posters"],
@@ -161,7 +163,7 @@ export const services: Service[] = [
     included: ["Page structure", "Layout and typography", "Image treatment", "Print-ready setup"],
     deliverables: ["Print-ready PDF", "Digital PDF"],
     suitableFor: ["Real estate", "Education", "Manufacturing", "Hospitality"],
-    turnaround: "5–10 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Other",
     portfolioCategories: ["Branding"],
@@ -175,7 +177,7 @@ export const services: Service[] = [
     included: ["Ad concept", "Product-focused composition", "Multiple ad sizes", "Copy layout"],
     deliverables: ["Ad creatives in required sizes", "Variations for testing"],
     suitableFor: ["D2C brands", "E-commerce stores", "Performance marketers"],
-    turnaround: "3–5 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Social Media Design",
     portfolioCategories: ["Social Media"],
@@ -189,7 +191,7 @@ export const services: Service[] = [
     included: ["Slide structure review", "Master template", "Data visualisation", "Icon and image styling"],
     deliverables: ["PowerPoint / Keynote / Google Slides file", "PDF export"],
     suitableFor: ["Startups raising funds", "Sales teams", "Consultants"],
-    turnaround: "5–7 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Other",
     portfolioCategories: ["Branding"],
@@ -206,7 +208,7 @@ export const services: Service[] = [
     deliverables: ["Vertical 9:16 MP4", "Cover frame"],
     suitableFor: ["Creators", "Brands", "Restaurants", "Coaches"],
     formats: ["MP4 (H.264)", "1080×1920", "Up to 90 seconds"],
-    turnaround: "2–4 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Reels Editing",
     portfolioCategories: ["Video Editing"],
@@ -221,7 +223,7 @@ export const services: Service[] = [
     deliverables: ["Vertical 9:16 MP4"],
     suitableFor: ["YouTubers", "Educators", "Podcasters repurposing content"],
     formats: ["MP4 (H.264)", "1080×1920", "Up to 60 seconds"],
-    turnaround: "2–4 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "YouTube Editing",
     portfolioCategories: ["Video Editing"],
@@ -236,7 +238,7 @@ export const services: Service[] = [
     deliverables: ["16:9 MP4 master", "Optional thumbnail design"],
     suitableFor: ["YouTubers", "Educators", "Brands with channels"],
     formats: ["MP4 (H.264/H.265)", "1080p or 4K"],
-    turnaround: "4–7 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "YouTube Editing",
     portfolioCategories: ["Video Editing"],
@@ -251,7 +253,7 @@ export const services: Service[] = [
     deliverables: ["Master video", "Social cut-downs in multiple ratios"],
     suitableFor: ["Businesses", "Events", "Product launches"],
     formats: ["MP4", "16:9, 1:1, 9:16"],
-    turnaround: "5–10 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Promotional Video",
     portfolioCategories: ["Promotional Videos"],
@@ -266,7 +268,7 @@ export const services: Service[] = [
     deliverables: ["Hero product video", "Short ad cut-downs"],
     suitableFor: ["D2C brands", "E-commerce", "Hardware and gadgets"],
     formats: ["MP4", "16:9, 1:1, 9:16"],
-    turnaround: "5–8 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Promotional Video",
     portfolioCategories: ["Promotional Videos"],
@@ -281,7 +283,7 @@ export const services: Service[] = [
     deliverables: ["Master film", "Trailer or teaser cut"],
     suitableFor: ["Filmmakers", "Travel creators", "Brand films", "Weddings and events"],
     formats: ["MP4 / MOV", "Up to 4K"],
-    turnaround: "7–14 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Other",
     portfolioCategories: ["Video Editing"],
@@ -296,7 +298,7 @@ export const services: Service[] = [
     deliverables: ["Animated logo", "Lower thirds and titles", "Explainer sequences"],
     suitableFor: ["Brands", "YouTubers", "Agencies", "Product teams"],
     formats: ["MP4", "MOV with alpha", "GIF / Lottie on request"],
-    turnaround: "5–10 working days",
+    turnaround: "Confirmed after scope review",
     startingPrice: null,
     orderService: "Other",
     portfolioCategories: ["Promotional Videos", "Video Editing"],
@@ -316,3 +318,14 @@ export function formatPrice(price: Price | null) {
   const locale = price.currency === "INR" ? "en-IN" : "en-US";
   return `From ${new Intl.NumberFormat(locale, { style: "currency", currency: price.currency, maximumFractionDigits: 0 }).format(price.amount)}`;
 }
+
+/** Shared quote-stage information; service-specific policies can override it. */
+export const serviceQuoteDetails = {
+  revisionPolicy: "Revision rounds and change requests are defined in your project quotation. No fixed revision allowance is confirmed here.",
+  faqs: [
+    { question: "How is pricing decided?", answer: "Pricing depends on scope, complexity and deliverables. Request a quote for your brief; no fixed price is advertised." },
+    { question: "What should I prepare?", answer: "Share your goals, audience, existing brand assets, reference links and any preferred deadline." },
+    { question: "When will the work be delivered?", answer: "Timing is confirmed after scope review. A preferred deadline is a request, not a delivery commitment." },
+    { question: "Are editable source files included?", answer: "Specify the formats you need in your brief. Source files, licensing and final deliverables need to be confirmed in the quotation." },
+  ],
+};

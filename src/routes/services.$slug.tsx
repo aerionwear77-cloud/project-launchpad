@@ -5,7 +5,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { CtaBand } from "@/components/site/CtaBand";
-import { departments, formatPrice, getService, servicesByDepartment } from "@/data/services";
+import { departments, formatPrice, getService, servicesByDepartment, serviceQuoteDetails } from "@/data/services";
 import { projects } from "@/data/portfolio";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -52,7 +52,7 @@ function ServiceDetail() {
         </div>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <Button asChild variant="hero" size="xl">
-            <Link to="/start-project" search={{ service: s.orderService }}>Order Now</Link>
+            <Link to="/start-project" search={{ service: s.slug }}>Start a Project</Link>
           </Button>
           <Button asChild variant="heroOutline" size="xl">
             <Link to="/book">Discuss on a call</Link>
@@ -111,13 +111,20 @@ function ServiceDetail() {
                 </div>
               </dl>
               <Button asChild variant="hero" size="xl" className="mt-8 w-full">
-                <Link to="/start-project" search={{ service: s.orderService }}>Order Now</Link>
+                <Link to="/start-project" search={{ service: s.slug }}>Request a Quote</Link>
               </Button>
               <p className="mt-4 text-xs text-on-dark-muted">
                 Submitting a request is not a payment. We'll confirm scope and price with you first.
               </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="bg-offwhite pb-20">
+        <div className="container-wide grid gap-12 border-t border-hairline pt-12 md:grid-cols-2">
+          <div><p className="eyebrow text-orange-deep">Revisions</p><h2 className="display-md mt-4">Clear scope, clear expectations.</h2><p className="mt-6 text-slate">{s.revisionPolicy ?? serviceQuoteDetails.revisionPolicy}</p></div>
+          <div><h2 className="display-md">Frequently asked questions</h2><div className="mt-6 divide-y divide-hairline">{(s.faqs ?? serviceQuoteDetails.faqs).map((faq) => <details key={faq.question} className="py-5"><summary className="cursor-pointer font-medium">{faq.question}</summary><p className="mt-4 text-slate">{faq.answer}</p></details>)}</div></div>
         </div>
       </section>
 
